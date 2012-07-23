@@ -16,7 +16,7 @@ How to use?
 
 From http://exchange.nagios.org/directory/Addons/APIs/Python/python-2Dnagios/details 
 
-**A library which allows you to interact with cmd.cgi.**
+**A library which allows you to interact with cmd.cgi.**  
 The cmd.cgi which comes bundled with Nagios has many abilities beyond acknowledging alerts, but writing software callouts for doing them can be tedious since the only documentation is the source code. Enter python-nagios, a library for interacting with cmd.cgi. It support both HTTP and HTTPS, passwords, and non-standard installation paths. A short example might be instructive:
 
     #! /usr/bin/env python
