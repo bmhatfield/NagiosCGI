@@ -6,7 +6,7 @@ Nagios CGI Client (From: http://code.google.com/p/python-nagios/)
 Why this fork?
 --------------
 
-The code.google.com version of python-nagios hasn't been touched since Sept, 2011. Additionally, it's feature incomplete and uncommented.
+The code.google.com version of python-nagios hasn't been touched since Sept, 2011.
 
 The aim of this fork is to add some needed features, touch up some existing methods, and add methods that are missing as needed.
 
