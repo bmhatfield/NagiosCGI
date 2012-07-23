@@ -208,7 +208,8 @@ class Nagcgi:
         data = urllib.urlencode(kwargs)
 
         if self.debug:
-            print "DIV data info: ", data
+            print "URI: %s" % (self.uri)
+            print "DATA: %s" % (data)
 
         return self.opener.open(self.uri, data).read()
 
