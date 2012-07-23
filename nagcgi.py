@@ -175,10 +175,12 @@ class Nagcgi:
     CMD_DEL_DOWNTIME_BY_START_TIME_COMMENT = 172
     CMD_CUSTOM_COMMAND = 999
     _time_fmt = '%m-%d-%Y %T'
+    debug = False
 
     def __init__(self, hostname, userid = None, password = None, 
-                 secure = None, cgi = '/nagios/cgi-bin/cmd.cgi'):
+                 secure = None, cgi = '/nagios/cgi-bin/cmd.cgi', debug=False):
         parts = ['http',]
+        if debug: self.debug = True
         if secure: parts.append('s')
         parts.append('://')
         parts.append(hostname)
@@ -204,7 +206,10 @@ class Nagcgi:
         kwargs['cmd_typ'] = cmd
         kwargs['cmd_mod'] = self._commit
         data = urllib.urlencode(kwargs)
-        print "DIV data info: ", data
+
+        if self.debug:
+            print "DIV data info: ", data
+
         return self.opener.open(self.uri, data).read()
 
     def _default_start_time(self):
