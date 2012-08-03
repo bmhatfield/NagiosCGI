@@ -8,8 +8,10 @@ Nagios controllable programatically.
 
 Expects python-2.6.2 or equivalent for urllib2.
 '''
+import urllib
+import urllib2
+import time
 
-import urllib, urllib2, os, time
 
 class Nagcgi:
     _commit = 2
@@ -177,11 +179,13 @@ class Nagcgi:
     _time_fmt = '%m-%d-%Y %T'
     debug = False
 
-    def __init__(self, hostname, userid = None, password = None, 
-                 secure = None, cgi = '/nagios/cgi-bin/cmd.cgi', debug=False):
-        parts = ['http',]
-        if debug: self.debug = True
-        if secure: parts.append('s')
+    def __init__(self, hostname, userid = None, password = None,
+                 secure = None, cgi = '/nagios/cgi-bin/cmd.cgi', debug = False):
+        parts = ['http', ]
+        if debug:
+            self.debug = True
+        if secure:
+            parts.append('s')
         parts.append('://')
         parts.append(hostname)
         parts.append(cgi)
