@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(name='nagcgi',
-      version='1.0.1',
+      version='1.0.2',
       description="Python Implementation of the Nagios CGI URL API",
       author="Brian Hatfield",
       author_email="bmhatfield@gmail.com",
