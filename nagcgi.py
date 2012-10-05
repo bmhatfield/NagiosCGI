@@ -267,7 +267,7 @@ class Nagcgi:
     def schedule_host_downtime(self, hostname, comment="Automated Downtime", start_time=None, end_time=None):
         if not start_time: start_time = self._default_start_time()
         if not end_time: end_time = self._default_end_time()
-        return self._dispatch(self.CMD_SCHEDULE_HOST_DOWNTIME, host=hostname, com_data=comment, fixed="0", hours="2",
+        return self._dispatch(self.CMD_SCHEDULE_HOST_DOWNTIME, host=hostname, com_data=comment, fixed="1", hours="2",
                               start_time=start_time, end_time=end_time)
                     
     def disable_notifications(self):
