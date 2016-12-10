@@ -293,5 +293,10 @@ class Nagcgi:
 
     def enable_host_svc_notifications(self, hostname, ahas = 1):
         return self._dispatch(self.CMD_ENABLE_HOST_SVC_NOTIFICATIONS, host = hostname, ahas = str(ahas) )
-                    
+
+    def submit_passive_check(self, hostname, service, result, output):
+        return self._dispatch(self.CMD_PROCESS_SERVICE_CHECK_RESULT, host = hostname, service = service, plugin_state=result, plugin_output=output )
+
+    def schedule_service_check(self, hostname, service, checktime):
+        return self._dispatch(self.CMD_SCHEDULE_SVC_CHECK, host = hostname, service = service, start_time=checktime, force_check=True )
 
